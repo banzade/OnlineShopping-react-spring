@@ -20,16 +20,16 @@ ReactDOM.render(
 
       <Route path="/" element={<App/>}>
       <Route path="/search" element={<ProductSearch/>}/>
-      <Route path="/login" element={<LoginPage/>}/>
+      
       
 
       <Route path="/registration" element={<RegisterPage/>}/>
 
-      <Route path="/profie"  element={<ProfileView/>}/>
+      <Route path="/profile/:user"  element={<ProfileView/>}/>
 
 
       </Route>
-
+      <Route path="/login" element={<LoginPage/>}/>
     </Routes>
 
     </BrowserRouter>

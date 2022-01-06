@@ -8,9 +8,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.onlineshopping.constant.Constant;
+import com.onlineshopping.entity.Admin;
 import com.onlineshopping.entity.Login;
 import com.onlineshopping.entity.User;
 import com.onlineshopping.exception.NoUserFoundException;
+import com.onlineshopping.service.AdminService;
 import com.onlineshopping.service.UserService;
 
 @CrossOrigin(origins = "*")
@@ -19,6 +21,7 @@ public class LoginController {
 
 	@Autowired
 	UserService userService;
+
 
 	@PostMapping(value = "/user/loginProcess")
 	public String login(@RequestBody Login login) throws NoUserFoundException {

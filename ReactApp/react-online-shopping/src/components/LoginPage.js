@@ -2,9 +2,14 @@ import React from "react";
 import axios from "axios";
 import { PropTypes } from 'react'
 import {useHistory} from 'react-router-dom'
+
+import {withRouter} from './History';
+
+import {Outlet} from 'react-router-dom';
+
 // axios.defaults.withCredentials = true
 const backEndUrl = "http://localhost:8080"
-export default class LoginPage extends React.Component {
+class LoginPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -38,14 +43,23 @@ export default class LoginPage extends React.Component {
         // alert(this.state.userName + " " + this.state.password);
         try {
             
-            let res = await axios.post(backEndUrl + "/user/loginProcess", {
+            let res = await axios.post(backEndUrl + "/user/loginpage", {
                 userName: this.state.userName,
                 password: this.state.password,
-            });
+            }).then((res)=>{
+
+
+            })
             // window.location.href="/"
-            this.props.history.push("/profile")
-            this.setState({message:"Welcome "+this.state.userName})
             
+            // this.setState({message:"Welcome "+this.state.userName})
+            
+
+            this.props.history(`/profile/${this.state.userName}`);
+
+
+
+
             // alert("Welcome, " + this.state.userName);
             // localStorage.setItem("userName", res.data.userName);
             // localStorage.setItem("logged", "true");
@@ -58,6 +72,7 @@ export default class LoginPage extends React.Component {
                     this.setState({userVar
                     :res.data})
             })
+
         } catch (err) {
             console.log(err)
             if (err.response.status == 404) {
@@ -68,6 +83,7 @@ export default class LoginPage extends React.Component {
                 // alert(err.response.data)
                 // window.location.reload();
              }
+
         } finally {
             //alert("stop");
         }
@@ -77,7 +93,7 @@ export default class LoginPage extends React.Component {
         
         return (
             <form onSubmit={this.onSubmit}>
-
+                
                 <h3>Log in</h3>
 
                 <div className="form-group">
@@ -98,12 +114,16 @@ export default class LoginPage extends React.Component {
                 </div>
 
                 <button type="submit" className="btn btn-dark btn-lg btn-block">Sign in</button>
-                
+
+                 <Outlet/>       
                 <br/>{this.state.message}
 
 
 
             </form>
+
         );
     }
 }
+
+export default withRouter(LoginPage);

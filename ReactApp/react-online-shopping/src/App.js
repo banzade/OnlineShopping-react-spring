@@ -7,7 +7,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import {useHistory} from 'react';
 
-function App() {
+function App(props) {
 
   // const history = useHistory()
 
