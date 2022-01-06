@@ -46,16 +46,18 @@ class LoginPage extends React.Component {
             let res = await axios.post(backEndUrl + "/user/loginpage", {
                 userName: this.state.userName,
                 password: this.state.password,
-            }).then((res)=>{
-
-
             })
+            this.setState({message:res.data})
+            console.log(res.data);
+            if(res.data === "Sucessfully Logged In"){
+                this.props.history(`/profile/${this.state.userName}`);
+            }
             // window.location.href="/"
             
             // this.setState({message:"Welcome "+this.state.userName})
             
 
-            this.props.history(`/profile/${this.state.userName}`);
+            // this.props.history(`/profile/${this.state.userName}`);
 
 
 
@@ -77,12 +79,13 @@ class LoginPage extends React.Component {
             console.log(err)
             if (err.response.status == 404) {
                 // alert(err.response)
-                
-               this.setState({message:"Invalid credentials"})
+                this.setState({message:err.response.data});
+            //    this.setState({message:" Invalid credentials"})
 
                 // alert(err.response.data)
                 // window.location.reload();
              }
+             this.setState({message:err.response.data});
 
         } finally {
             //alert("stop");

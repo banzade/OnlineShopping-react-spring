@@ -7,9 +7,14 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import {useHistory} from 'react';
 
+
+import ProductList from './components/ProductList'
+
+
 function App(props) {
 
   // const history = useHistory()
+
 
 return (
 
@@ -39,12 +44,14 @@ return (
 
      </div>
 
-     
+
 
      <div className="App" style={{ backgroundColor:"pink"}}>
 
      <Outlet/>
-
+                 <div>
+      <ProductList/>
+      </div>
 
 
 
