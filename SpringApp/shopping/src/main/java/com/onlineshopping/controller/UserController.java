@@ -44,6 +44,15 @@ public class UserController {
 
 	@Autowired
 	UserService userService;
+	
+//	@Autowired
+//	AdminService adminService;
+//	
+//	@Autowired
+//	AdminDao adminDao;
+//	
+//	@Autowired
+//	Admin admin;
 
 	@Autowired
 	UserDAO userdao;
@@ -125,7 +134,7 @@ public class UserController {
 		BeanUtils.copyProperties(userDetails, userDTO);
 
 		UserDTO updatedUserDTO = userService.updateUser(userId, userDTO);
-		BeanUtils.copyProperties(updatedUserDTO, userRest);
+//		BeanUtils.copyProperties(updatedUserDTO, userRest);
 		return userRest;
 	}
 

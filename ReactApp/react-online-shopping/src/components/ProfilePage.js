@@ -9,6 +9,11 @@ function ProfileView(){
     const [userProfile, setUserProfile] = useState({});
     const [deleteMessage, setDeleteMessage] = useState("");
     const [userUpdateMessage, setUpdateMessage] = useState({});
+    const[userFirstName, setUserFirstName]= useState("");
+    const[userLastName, setUserLastName]= useState("");
+    const[userEmail, setUserEmail]= useState("");
+    const[userPassword, setUserPassword]= useState("");
+    
 
 
     // useEffect(() => {
@@ -36,7 +41,14 @@ function ProfileView(){
             })
     }}>View your profile </button>
     <form style = {mystyle}>
-            <label> {userProfile.userEmail}</label> <br/> <br/>
+            {/* <label> {userProfile.userEmail}</label> <br/> <br/>
+            <label> */}
+            <label>
+            Email
+            </label>
+            <input name="prodName" className="form-control" defaultValue={userProfile.userEmail} onChange={(e)=>{
+                setUserEmail(e.target.value)
+            }}/>
             <label>
             UserName
             </label>
@@ -45,12 +57,16 @@ function ProfileView(){
             <label>
             First Name
             </label>
-            <input placeholder="Prod Name" name="prodName" className="form-control" defaultValue={userProfile.uFirstName}/>
+            <input placeholder="Prod Name" name="prodName" className="form-control" defaultValue={userProfile.uFirstName} onChange={(e)=>{
+                setUserFirstName(e.target.value)
+            }}/>
 
             <label>
             Last Name
             </label>
-            <input placeholder="Prod Name" name="prodName" className="form-control" defaultValue={userProfile.uLastName}/>
+            <input placeholder="Prod Name" name="prodName" className="form-control" defaultValue={userProfile.uLastName} onChange={(e)=>{
+                setUserLastName(e.target.value)
+            }}/>
 
             <label>
             Address
@@ -68,10 +84,12 @@ function ProfileView(){
          {userProfile.userAddress} {userProfile.phone} */}
 
         <button onClick={(e)=>{
+            userProfile.uFirstName=userFirstName
+            userProfile.uLastName=userLastName
+            userProfile.userEmail=userEmail
+
             e.preventDefault()
-            axios.put(`http://localhost:8080/userupdate/${userProfile.userId}`,{
-                
-            }).then((res)=>{
+            axios.put(`http://localhost:8080/userupdate/${userProfile.userId}`,userProfile).then((res)=>{
                 setUpdateMessage("Profile is updated");
             })
         }}>Update your button</button>

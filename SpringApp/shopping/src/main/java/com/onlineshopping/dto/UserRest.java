@@ -5,6 +5,7 @@ public class UserRest {
 	private String userFirstName;
 	private String userLastName;
 	private String userEmail;
+	
 	public String getUserId() {
 		return userId;
 	}
@@ -28,6 +29,11 @@ public class UserRest {
 	}
 	public void setUserEmail(String userEmail) {
 		this.userEmail = userEmail;
+	}
+	@Override
+	public String toString() {
+		return "UserRest [userId=" + userId + ", userFirstName=" + userFirstName + ", userLastName=" + userLastName
+				+ ", userEmail=" + userEmail + "]";
 	}
 	
 }
