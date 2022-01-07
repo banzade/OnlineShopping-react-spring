@@ -14,15 +14,6 @@ class ProductList extends Component{
         };
 
     }
-
-    // very good component
-    componentDidUpdate(){
-    axios.get("http://localhost:8080/productlist").then((res)=>{
-                    this.setState({result_array
-                    :res.data})
-            })
-            }
-
     
     componentDidMount(){
     axios.get("http://localhost:8080/productlist").then((res)=>{
@@ -36,31 +27,22 @@ class ProductList extends Component{
 
                 
                 var ui = <div> 
-                                <table>
+                <table>
                     <ul>                    
                     <tr>
                          <th>Product name</th>
                          <th>Product price</th>
                         <th>Product quantity</th>
                     </tr>            
-            {this.state.result_array.map((e1)=>{
-                var update_url = `/updateproduct/${e1.prodId}`
-                var prodName = `${e1.prodName}`
-
-                var delete_url = `/deleteproduct/${e1.prodName}`
+            {this.state.result_array.map((e)=>{
+                var update_url = `/updateproduct/${e.prodId}`
                 return <tr>
-                    <td>{e1.prodName}</td>
-                    <td>{e1.prodPrice}</td>
-                    <td>{e1.prodQuantity}</td>
+                    <td>{e.prodName}</td>
+                    <td>{e.prodPrice}</td>
+                    <td>{e.prodQuantity}</td>
                     <td>
-                    <button><Link to ={update_url} style={{ textDecoration: 'none' }}> Update </Link> </button>
-                    </td>
-
-                    <button onClick={(e)=>{
-                        axios.delete("http://localhost:8080"+delete_url)
-                        alert(prodName+" successfully deleted")
-                        
-                    }}> Delete</button> 
+                    <Link to ={update_url}> Update </Link>
+                    </td> 
                     </tr>
 
                     

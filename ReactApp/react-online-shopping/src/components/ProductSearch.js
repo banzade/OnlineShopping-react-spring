@@ -28,19 +28,19 @@ class ProductSearch extends Component{
     }
 
     
-// componentDidMount(){
-//     axios.get("http://localhost:8080/productlist").then((res)=>{
-//                     this.setState({result_array
-//                     :res.data})
-//             })
-//             }
+componentDidMount(){
+    axios.get("http://localhost:8080/productlist").then((res)=>{
+                    this.setState({result_array
+                    :res.data})
+            })
+            }
 
-// componentDidUpdate(){
-//     axios.get("http://localhost:8080/productlist").then((res)=>{
-//                     this.setState({result_array
-//                     :res.data})
-//             })
-//             }
+componentDidUpdate(){
+    axios.get("http://localhost:8080/productlist").then((res)=>{
+                    this.setState({result_array
+                    :res.data})
+            })
+            }
 
 
 
@@ -85,7 +85,6 @@ class ProductSearch extends Component{
                     <td>{e.prodPrice}</td>
                     <td>{e.prodQuantity}</td>
                     </tr>
-
             })}
                                 
                 

@@ -76,7 +76,7 @@ export default class RegisterPage extends React.Component {
 
     
     async onSubmit(e) {
-        alert(this.state.userName + " is registered succesfully");
+        
         await axios.post("http://localhost:8080/user/registration", {
             userEmail: this.state.userEmail,
             userId: this.state.userId,
@@ -88,7 +88,10 @@ export default class RegisterPage extends React.Component {
             phone: this.state.phone
         })
         .then((res) => {
+            alert(this.state.userName + " is registered succesfully");
             alert(res.status);
+            window.location='/login';
+
         })
         .catch((err) => {
             alert(err);

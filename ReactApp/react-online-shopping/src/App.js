@@ -20,7 +20,7 @@ return (
 
     <div>
 
-      <div style={{border: '10px dashed pink'}, {backgroundColor:"pink"}}>
+      <div>
         <h2> Apna Bazaar</h2>
        </div>
      
@@ -28,7 +28,6 @@ return (
      <div style={{backgroundColor:"yellow" }}>      
 
      <nav>
-
       <Link to="/search">Search</Link> 
        {/* <Link to={{pathname:'/login',state:history}} >Login</Link>  */}
        <Link to="/login">Login</Link> 
@@ -37,9 +36,7 @@ return (
 
         <Link to ="/updateproduct"> Update Product </Link>
 
-       <Link to="/registration">SignUp</Link>
-
-       
+       <Link to="/registration">SignUp</Link>       
      </nav>
 
 
@@ -51,7 +48,9 @@ return (
      <div className="App" style={{ backgroundColor:"pink"}}>
 
      <Outlet/>
-                 <div>
+      
+      {/* landing page */}
+      <div> 
       <ProductList/>
       </div>
 

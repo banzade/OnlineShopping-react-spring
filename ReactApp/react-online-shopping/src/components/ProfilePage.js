@@ -46,37 +46,37 @@ function ProfileView(){
             <label>
             Email
             </label>
-            <input name="prodName" className="form-control" defaultValue={userProfile.userEmail} onChange={(e)=>{
+            <input className="form-control" defaultValue={userProfile.userEmail} onChange={(e)=>{
                 setUserEmail(e.target.value)
             }}/>
             <label>
             UserName
             </label>
-            <input name="prodName" className="form-control" defaultValue={userProfile.userName}/>
+            <input className="form-control" defaultValue={userProfile.userName}/>
 
             <label>
             First Name
             </label>
-            <input placeholder="Prod Name" name="prodName" className="form-control" defaultValue={userProfile.uFirstName} onChange={(e)=>{
+            <input className="form-control" defaultValue={userProfile.uFirstName} onChange={(e)=>{
                 setUserFirstName(e.target.value)
             }}/>
 
             <label>
             Last Name
             </label>
-            <input placeholder="Prod Name" name="prodName" className="form-control" defaultValue={userProfile.uLastName} onChange={(e)=>{
+            <input className="form-control" defaultValue={userProfile.uLastName} onChange={(e)=>{
                 setUserLastName(e.target.value)
             }}/>
 
             <label>
             Address
             </label>
-            <input placeholder="Prod Name" name="prodName" className="form-control" defaultValue={userProfile.userAddress}/>
+            <input className="form-control" defaultValue={userProfile.userAddress}/>
 
             <label>
-            phone
+            Phone
             </label>
-            <input placeholder="Prod Name" name="prodName" className="form-control" defaultValue={userProfile.phone}/>
+            <input className="form-control" defaultValue={userProfile.phone}/>
     </form>
 
 
@@ -89,10 +89,10 @@ function ProfileView(){
             userProfile.userEmail=userEmail
 
             e.preventDefault()
-            axios.put(`http://localhost:8080/userupdate/${userProfile.userId}`,userProfile).then((res)=>{
+            axios.post(`http://localhost:8080/userupdate/${userProfile.userId}`,userProfile).then((res)=>{
                 setUpdateMessage("Profile is updated");
             })
-        }}>Update your button</button>
+        }}>Update your data</button>
 
 
 

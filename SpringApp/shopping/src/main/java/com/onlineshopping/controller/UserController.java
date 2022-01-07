@@ -131,10 +131,10 @@ public class UserController {
 		UserRest userRest = new UserRest();
 
 		UserDTO userDTO = new UserDTO();
-		BeanUtils.copyProperties(userDetails, userDTO);
+//		BeanUtils.copyProperties(userDetails, userDTO);
 
 		UserDTO updatedUserDTO = userService.updateUser(userId, userDTO);
-//		BeanUtils.copyProperties(updatedUserDTO, userRest);
+		BeanUtils.copyProperties(updatedUserDTO, userRest);
 		return userRest;
 	}
 

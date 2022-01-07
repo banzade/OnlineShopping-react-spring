@@ -13,6 +13,7 @@ import LoginPage from "./components/LoginPage";
 import ProductSearch from "./components/ProductSearch";
 import ProfileView from "./components/ProfilePage";
 import CreateProduct from './components/CreateProduct';
+
 // import DeleteProduct from './components/DeleteProduct'
 
 
@@ -30,12 +31,14 @@ ReactDOM.render(
       <Route path="/createproduct" element={<CreateProduct/>}/>
       <Route path="/login" element={<LoginPage/>}/>
       <Route path="/updateproduct/:prodName" element={<UpdateProducts/>}/>
+
+      
       
      <Route path ="/" element ={<App/>}>
      {/* <Route path ="/addproduct" element={<ListofProducts/>}/> */}
      {/* <Route path ="/updateproduct" element={<UpdateProducts/>}/> */}
      {/* <Route path ="/deleteproduct" element={<DeleteProduct/>}/> */}
-       </Route>
+  </Route>
       
    </Routes>
    </BrowserRouter>
