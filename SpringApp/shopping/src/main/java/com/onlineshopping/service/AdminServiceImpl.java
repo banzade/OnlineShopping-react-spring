@@ -75,7 +75,7 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public Admin validateUser(Login login) {
+	public Admin validateAdmin(Login login) {
 		return admindao.findById(login.getAdminName()).orElseThrow(NoUserFoundException::new);
 	}
 

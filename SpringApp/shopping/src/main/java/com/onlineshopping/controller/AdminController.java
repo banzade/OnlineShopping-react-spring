@@ -35,21 +35,21 @@ public class AdminController {
 		return productService.getAllProduct();
 	}
 
-	@PostMapping(value = "/admin/login")
-	public String login(@RequestBody Login login) throws NoUserFoundException {
-
-		Admin admin = adminService.validateUser(login);
-
-		boolean isValidUser = false;
-
-		if (null != admin) {
-			if ((admin.getAdminName().equals(login.getAdminName())
-					&& admin.getPassword().equals(login.getPassword()))) {
-				isValidUser = true;
-			} else {
-				throw new NoUserFoundException();
-			}
-		}
-		return isValidUser ? Constant.SUCCESSFULLY_LOGGED_IN : Constant.LOGGED_IN_FAILED;
-	}
+//	@PostMapping(value = "/admin/login")
+//	public String login(@RequestBody Login login) throws NoUserFoundException {
+//
+//		Admin admin = adminService.validateUser(login);
+//
+//		boolean isValidUser = false;
+//
+//		if (null != admin) {
+//			if ((admin.getAdminName().equals(login.getAdminName())
+//					&& admin.getPassword().equals(login.getPassword()))) {
+//				isValidUser = true;
+//			} else {
+//				throw new NoUserFoundException();
+//			}
+//		}
+//		return isValidUser ? Constant.SUCCESSFULLY_LOGGED_IN : Constant.LOGGED_IN_FAILED;
+//	}
 }

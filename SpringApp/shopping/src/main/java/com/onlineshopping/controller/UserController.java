@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.onlineshopping.constant.Constant;
+import com.onlineshopping.dao.AdminDao;
 import com.onlineshopping.dao.ProductDAO;
 import com.onlineshopping.dao.UserDAO;
 import com.onlineshopping.dto.UserDTO;
@@ -28,6 +29,7 @@ import com.onlineshopping.entity.User;
 import com.onlineshopping.exception.EmailException;
 import com.onlineshopping.exception.NoUserFoundException;
 import com.onlineshopping.exception.RecordAlreadyExistException;
+import com.onlineshopping.service.AdminService;
 import com.onlineshopping.service.ProductService;
 import com.onlineshopping.service.UserService;
 import com.onlineshopping.service.UserServiceImpl;

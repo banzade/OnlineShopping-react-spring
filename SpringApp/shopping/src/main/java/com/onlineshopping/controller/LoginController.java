@@ -19,33 +19,50 @@ import com.onlineshopping.service.UserService;
 @RestController
 public class LoginController {
 
-	@Autowired
-	UserService userService;
+//	@Autowired
+//	UserService userService;
+//	@Autowired
+//	AdminService adminService;
+	
+	
 
 
-	@PostMapping(value = "/user/loginProcess")
-	public String login(@RequestBody Login login) throws NoUserFoundException {
-
-		User user = userService.validateUser(login);
-
-		boolean isValidUser = false;
-
-		if (null != user) {
-			if ((user.getUserName().equals(login.getUserName()) && user.getPassword().equals(login.getPassword()))) {
-				isValidUser = true;
-			} else {
-
-				throw new NoUserFoundException();
-			}
-
-		}
-
-		return isValidUser ? Constant.SUCCESSFULLY_LOGGED_IN : Constant.LOGGED_IN_FAILED;
-	}
-
-	@GetMapping("/login")
-	public String login() {
-		return "login";
-	}
+//	@PostMapping(value = "/user/loginProcess")
+//	public String login(@RequestBody Login login) throws NoUserFoundException {
+//
+//		User user = userService.validateUser(login);
+//
+//		boolean isValidUser = false;
+//
+//		if (null != user) {
+//			if ((user.getUserName().equals(login.getUserName()) && user.getPassword().equals(login.getPassword()))) {
+//				isValidUser = true;
+//			} else {
+//
+//				throw new NoUserFoundException();
+//			}
+//
+//		}
+//
+//		return isValidUser ? Constant.SUCCESSFULLY_LOGGED_IN : Constant.LOGGED_IN_FAILED;
+//	}
+//	
+//	@PostMapping(value = "/admin/login")
+//	public String login(@RequestBody Login login) throws NoUserFoundException {
+//		Admin admin = adminService.validateUser(login);
+//
+//		boolean isValidUser = false;
+//
+//		if (null != admin) {
+//			if ((admin.getAdminName().equals(login.getAdminName())
+//					&& admin.getPassword().equals(login.getPassword()))) {
+//				isValidUser = true;
+//			} else {
+//				throw new NoUserFoundException();
+//			}
+//		}
+//		return isValidUser ? Constant.SUCCESSFULLY_LOGGED_IN : Constant.LOGGED_IN_FAILED;
+//	}
+	
 
 }

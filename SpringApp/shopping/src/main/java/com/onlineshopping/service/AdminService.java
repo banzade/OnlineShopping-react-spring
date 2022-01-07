@@ -8,7 +8,7 @@ import com.onlineshopping.entity.Product;
 import com.onlineshopping.entity.User;
 
 public interface AdminService {
-	public Admin validateUser(Login login);
+	public Admin validateAdmin(Login login);
 
 	public Product addProduct(Product product);
 
