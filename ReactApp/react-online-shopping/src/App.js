@@ -27,7 +27,7 @@ return (
 
      <div style={{backgroundColor:"yellow" }}>      
 
-     <nav>
+     <nav className="header">
       <Link to="/search">Search</Link> 
        {/* <Link to={{pathname:'/login',state:history}} >Login</Link>  */}
        <Link to="/login">Login</Link> 
