@@ -33,7 +33,9 @@ return (
        {/* <Link to={{pathname:'/login',state:history}} >Login</Link>  */}
        <Link to="/login">Login</Link> 
 
-              
+        <Link to ="/createproduct"> Create Product </Link>
+
+        <Link to ="/updateproduct"> Update Product </Link>
 
        <Link to="/registration">SignUp</Link>
 

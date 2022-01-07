@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import com.onlineshopping.dao.ProductDAO;
 import com.onlineshopping.entity.Product;
+import com.onlineshopping.entity.User;
 import com.onlineshopping.exception.NoProductFoundException;
 
 @Component
@@ -23,9 +24,9 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public void deleteProduct(Integer prodId) {
-
-		productDao.deleteById(prodId);
+	public void deleteProduct(String prodName) {
+		Product productByProdName = productDao.searchByProdName(prodName);
+		productDao.delete(productByProdName);
 	}
 
 	@Override

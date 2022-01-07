@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,9 +14,12 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.onlineshopping.entity.OperationStatusModel;
 import com.onlineshopping.entity.Product;
 import com.onlineshopping.exception.NoProductFoundException;
 import com.onlineshopping.service.ProductService;
+import com.onlineshopping.utils.RequestOperationName;
+import com.onlineshopping.utils.RequestOperationResult;
 
 @CrossOrigin(origins = "*")
 
@@ -58,6 +62,20 @@ public class ProductController {
 	public ResponseEntity<List<Product>> getProductByName(@PathVariable("prodName") String prodName) {
 		return new ResponseEntity<>(productService.findByName(prodName), HttpStatus.OK);
 
+	}
+	
+	
+	
+	
+	@DeleteMapping(path = "/deleteproduct/{prodName}")
+	public OperationStatusModel deleteProduct(@PathVariable("prodName") String prodName) {
+		OperationStatusModel operationStatusModel = new OperationStatusModel();
+		operationStatusModel.setOperationName(RequestOperationName.DELETE.name());
+
+		productService.deleteProduct(prodName);
+
+		operationStatusModel.setOperationResult(RequestOperationResult.SUCCESS.name());
+		return operationStatusModel;
 	}
 
 }
