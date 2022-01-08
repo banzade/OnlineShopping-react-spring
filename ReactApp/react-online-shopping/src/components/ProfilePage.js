@@ -2,7 +2,7 @@ import {withRouter} from './History';
 import {useParams} from 'react-router-dom';
 import axios from "axios";
 import {useEffect,useState} from 'react';
-
+import { Link, Outlet } from 'react-router-dom';
 
 function ProfileView(){
     const {user} = useParams()
@@ -31,7 +31,8 @@ function ProfileView(){
 
 
     return <div>
-        <h1> welcome to your profile </h1>    
+        <h1> welcome to your profile </h1>   
+        <button><Link to='/customerproductlist'>View product page</Link> </button>
         <form>
         <label> {user}</label>        
         </form>

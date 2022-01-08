@@ -1,8 +1,9 @@
 import React,{Component} from "react";
 import axios from "axios";
 import {Link} from 'react-router-dom';
+import UserProductSearch from "./UserProductSearch";
 
-class ProductList extends Component{
+class UserProductList extends Component{
     constructor(props){
 
         super(props);
@@ -20,6 +21,7 @@ class ProductList extends Component{
                     this.setState({result_array
                     :res.data})
             })
+            
             }
 
 
@@ -27,22 +29,27 @@ class ProductList extends Component{
 
                 
                 var ui = <div> 
+                    <nav>
+                        <Link to='/userproductsearch'> Product Search</Link>
+                    </nav>
                 <table>
                     <ul>                    
                     <tr>
                          <th>Product name</th>
                          <th>Product price</th>
                         <th>Product quantity</th>
+                        <th>Images</th>
                     </tr>            
             {this.state.result_array.map((e)=>{
-                var update_url = `/updateproduct/${e.prodId}`
+                
                 return <tr>
+                    <td><img src={require("../../images/34.jpg")} alt="buttery"/> </td>
                     <td>{e.prodName}</td>
                     <td>{e.prodPrice}</td>
                     <td>{e.prodQuantity}</td>
-                    <td>
+                    {/* <td>
                     <Link to ={update_url}> Update </Link>
-                    </td> 
+                    </td>  */}
                     </tr>
 
                     
@@ -58,7 +65,7 @@ class ProductList extends Component{
 
 
 }
-export default ProductList;
+export default UserProductList;
 
 
 

@@ -13,6 +13,10 @@ import LoginPage from "./components/LoginPage";
 import ProductSearch from "./components/ProductSearch";
 import ProfileView from "./components/ProfilePage";
 import CreateProduct from './components/CreateProduct';
+import BaseLocation from './components/BaseLocation';
+import ProductList from './components/ProductList';
+import UserProductList from './components/User/UserProductList';
+import UserProductSearch from './components/User/UserProductSearch';
 
 // import DeleteProduct from './components/DeleteProduct'
 
@@ -23,7 +27,9 @@ ReactDOM.render(
    <Routes>
    <Route path="/search" element={<ProductSearch/>}/>
       
-      
+      <Route path="/adminproductlist" element={<ProductList/>}/>
+
+      <Route path="/customerproductlist" element={<UserProductList/>}/>
 
       <Route path="/registration" element={<RegisterPage/>}/>
 
@@ -31,10 +37,14 @@ ReactDOM.render(
       <Route path="/createproduct" element={<CreateProduct/>}/>
       <Route path="/login" element={<LoginPage/>}/>
       <Route path="/updateproduct/:prodName" element={<UpdateProducts/>}/>
+      
+      <Route path="/userproductsearch" element={<UserProductSearch/>}/>
 
       
       
-     <Route path ="/" element ={<App/>}>
+     <Route path ="/admin" element ={<App/>}/>
+     <Route path ="/" element ={<BaseLocation/>}>
+
      {/* <Route path ="/addproduct" element={<ListofProducts/>}/> */}
      {/* <Route path ="/updateproduct" element={<UpdateProducts/>}/> */}
      {/* <Route path ="/deleteproduct" element={<DeleteProduct/>}/> */}

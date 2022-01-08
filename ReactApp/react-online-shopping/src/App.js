@@ -8,7 +8,19 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import {useHistory} from 'react';
 
 
+
 import ProductList from './components/ProductList'
+
+const linkStyle = {
+  margin: "1rem",
+  textDecoration: "none",
+  color: 'blue'
+}
+
+
+
+
+
 
 
 function App(props) {
@@ -25,18 +37,18 @@ return (
        </div>
      
 
-     <div style={{backgroundColor:"yellow" }}>      
+     <div >      
 
      <nav className="header">
       <Link to="/search">Search</Link> 
        {/* <Link to={{pathname:'/login',state:history}} >Login</Link>  */}
-       <Link to="/login">Login</Link> 
+       {/* <Link to="/login" style={linkStyle}>Login</Link>  */}
 
-        <Link to ="/createproduct"> Create Product </Link>
+        <Link to ="/createproduct"  style={linkStyle}> Create Product </Link>
 
-        <Link to ="/updateproduct"> Update Product </Link>
+        {/* <Link to ="/updateproduct" style={linkStyle}> Update Product </Link> */}
 
-       <Link to="/registration">SignUp</Link>       
+       {/* <Link to="/registration" style={linkStyle}>SignUp</Link>        */}
      </nav>
 
 
@@ -45,7 +57,7 @@ return (
 
 
 
-     <div className="App" style={{ backgroundColor:"pink"}}>
+     <div className="App" >
 
      <Outlet/>
       

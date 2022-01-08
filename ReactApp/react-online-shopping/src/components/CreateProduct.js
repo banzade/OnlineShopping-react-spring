@@ -71,6 +71,7 @@ class CreateProduct extends Component {
         ProductService.createProduct(product);
 
             this.setState({message:"Added"})
+            window.location='/'
 
         }
 
@@ -132,7 +133,9 @@ class CreateProduct extends Component {
                                                 value={this.state.prodPrice} onChange={this.changeProdPriceHandler} required pattern="[0-9]*"/>
                                         </div>
 
-                                        <button className="btn btn-success" onClick={this.saveProduct}>Save</button>
+                                        <button className="btn btn-success" onClick={this.saveProduct}
+    
+                                        >Save</button>
                                         {/* <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>Cancel</button> */}
                                         
                                     </form>
