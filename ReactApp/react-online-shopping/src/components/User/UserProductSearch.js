@@ -100,7 +100,7 @@ componentDidMount(){
                     </tr>            
             {this.state.result_array.map((e)=>{
                 return <tr>
-                    <td><img src={require(`../../images/${e.prodId}.jpg`)} alt="buttery" width='50px'/> </td>
+                    <td><img src={require(`../../images/${e.prodId}.jpg`)} alt="buttery" width='100px' height='100px'/> </td>
                     <td>{e.prodName}</td>
                     <td>{e.prodPrice}</td>
                     <td>{e.prodQuantity}</td>

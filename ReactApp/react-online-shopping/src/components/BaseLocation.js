@@ -12,7 +12,9 @@ function BaseLocation(){
         <h1>Apna Bazaar</h1>
         <nav>
         <Link to='/registration'> Customer</Link>
-        <Link to='/admin'> Admin</Link>
+        {/* <Link to='/admin'> Admin</Link> */}
+        <Link to='/adminlogin'> Admin</Link>
+        
         </nav>
 
         <div>

@@ -17,6 +17,7 @@ import BaseLocation from './components/BaseLocation';
 import ProductList from './components/ProductList';
 import UserProductList from './components/User/UserProductList';
 import UserProductSearch from './components/User/UserProductSearch';
+import AdminLoginPage from './components/Admin/AdminLoginPage';
 
 // import DeleteProduct from './components/DeleteProduct'
 
@@ -38,7 +39,9 @@ ReactDOM.render(
       <Route path="/login" element={<LoginPage/>}/>
       <Route path="/updateproduct/:prodName" element={<UpdateProducts/>}/>
       
-      <Route path="/userproductsearch" element={<UserProductSearch/>}/>
+      <Route path="/customerproductsearch" element={<UserProductSearch/>}/>
+      <Route path="/adminlogin" element={<AdminLoginPage/>}/>
+
 
       
       

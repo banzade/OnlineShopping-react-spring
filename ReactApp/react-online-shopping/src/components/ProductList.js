@@ -35,13 +35,16 @@ class ProductList extends Component{
             render(){
 
                 
-                var ui = <div> 
-                                <table>
+                var ui = <div className="row"> 
+                               <table className = "table table-striped table-bordered">
                     <ul>                    
                     <tr>
+                        <th></th>
                          <th>Product name</th>
                          <th>Product price</th>
                         <th>Product quantity</th>
+                        <th></th>
+
                     </tr>            
             {this.state.result_array.map((e1)=>{
                 var update_url = `/updateproduct/${e1.prodId}`
@@ -49,18 +52,21 @@ class ProductList extends Component{
 
                 var delete_url = `/deleteproduct/${e1.prodName}`
                 return <tr>
+                    <td><img src={require(`../images/${e1.prodId}.jpg`)} alt="buttery" width='100px' height='100px'/> </td>
                     <td>{e1.prodName}</td>
                     <td>{e1.prodPrice}</td>
                     <td>{e1.prodQuantity}</td>
                     <td>
                     <button><Link to ={update_url} style={{ textDecoration: 'none' }}> Update </Link> </button>
-                    </td>
-
+                    
+                  
                     <button onClick={(e)=>{
                         axios.delete("http://localhost:8080"+delete_url)
                         alert(prodName+" successfully deleted")
                         
-                    }}> Delete</button> 
+                    }}> Delete</button> </td>                 
+                                     
+
                     </tr>
 
                     

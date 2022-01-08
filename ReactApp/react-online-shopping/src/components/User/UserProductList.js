@@ -30,20 +30,21 @@ class UserProductList extends Component{
                 
                 var ui = <div> 
                     <nav>
-                        <Link to='/userproductsearch'> Product Search</Link>
+                        <Link to='/customerproductsearch'> Product Search</Link>
                     </nav>
+               
                 <table>
                     <ul>                    
-                    <tr>
+                    <tr >
+                        <th></th>
                          <th>Product name</th>
                          <th>Product price</th>
                         <th>Product quantity</th>
-                        <th>Images</th>
                     </tr>            
             {this.state.result_array.map((e)=>{
                 
                 return <tr>
-                    <td><img src={require("../../images/34.jpg")} alt="buttery"/> </td>
+                    <td><img src={require(`../../images/${e.prodId}.jpg`)} alt="buttery" width='100px' height='100px'/> </td>
                     <td>{e.prodName}</td>
                     <td>{e.prodPrice}</td>
                     <td>{e.prodQuantity}</td>
@@ -59,6 +60,7 @@ class UserProductList extends Component{
                 
                 </ul>
                 </table>
+
                 </div>
                 return ui
             }

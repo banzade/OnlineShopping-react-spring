@@ -32,7 +32,7 @@ function ProfileView(){
 
     return <div>
         <h1> welcome to your profile </h1>   
-        <button><Link to='/customerproductlist'>View product page</Link> </button>
+        <button><Link to='/customerproductsearch'>View product page</Link> </button>
         <form>
         <label> {user}</label>        
         </form>
