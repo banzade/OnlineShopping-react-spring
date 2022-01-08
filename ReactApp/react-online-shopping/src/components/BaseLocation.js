@@ -24,5 +24,4 @@ function BaseLocation(){
         </div>  
         </div>
 }
-
 export default BaseLocation;

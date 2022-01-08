@@ -51,10 +51,10 @@ componentDidMount(){
         var ui=<div>
             
             <div>
-            <button onClick={()=>{window.location="/customerproductlist"}}> Home</button>            
+            <button onClick={()=>{window.location="/"}}>Home</button>            
             </div> 
  
-            Product Search
+            <h3>Product Search</h3>
 
             <input type={'text'} placeholder="Search products" onChange={(e)=>{
                 this.setState({prodName:e.target.value})
@@ -89,7 +89,7 @@ componentDidMount(){
                     })
             }}>Search</button>
 
-            <table>
+            <table className = "table table-striped table-bordered">
                     <ul>                    
                     <tr>
                         <th></th>

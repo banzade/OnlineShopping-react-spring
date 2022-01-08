@@ -99,11 +99,17 @@ function ProfileView(){
 
          <button onClick={(e)=>{
              e.preventDefault()
+             if (window.confirm("Do you really want to do this 😒")) {
+                axios.delete(`http://localhost:8080/${user}`).then((res)=>{
+                    alert("Profile is deleted 🥺");
+                    window.location='/';
+                })
+              } else {
+               setDeleteMessage("Your profile is intact");
+              }
+
              
-             axios.delete(`http://localhost:8080/${user}`).then((res)=>{
-                setDeleteMessage("Profile is deleted");
-                window.location='/';
-            })
+
 
          }} > Delete your profile </button>
          {deleteMessage}

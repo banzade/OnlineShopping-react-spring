@@ -54,7 +54,7 @@ componentDidMount(){
             <button onClick={()=>{window.location="/admin"}}> Home</button>            
             </div> 
  
-            Product Search
+            <h3>Product Search</h3>
 
             <input type={'text'} placeholder="Search products" onChange={(e)=>{
                 this.setState({prodName:e.target.value})
@@ -78,7 +78,7 @@ componentDidMount(){
                     })
             }}>Search</button>
 
-            <table>
+            <table >
                     <ul>                    
                     <tr>
                         <th></th>

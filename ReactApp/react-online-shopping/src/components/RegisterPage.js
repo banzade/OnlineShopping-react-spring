@@ -106,43 +106,43 @@ export default class RegisterPage extends React.Component {
 
                 <div className="form-group">
                     <label>User Email</label>
-                    <input value={this.state.userEmail} onChange={this.onChangeUserEmail} id="userEmail" type="text" className="form-control" placeholder="Enter userEmail" />
+                    <input value={this.state.userEmail} onChange={this.onChangeUserEmail} id="userEmail" type="email" className="form-control" placeholder="Enter userEmail" required/>
                 </div> 
                 
                 <div className="form-group">
                     <label>User id</label>
-                    <input value={this.state.userId} onChange={this.onChangeUserId} id="userId" type="text" className="form-control" placeholder="Enter userId" />
+                    <input value={this.state.userId} onChange={this.onChangeUserId} id="userId" type="text" className="form-control" placeholder="Enter userId" required/>
                 </div>
                 
                 <div className="form-group">
                     <label>User Name</label>
-                    <input value={this.state.userName} onChange={this.onChangeUserName} id="userName" type="text" className="form-control" placeholder="Enter userName" />
+                    <input value={this.state.userName} onChange={this.onChangeUserName} id="userName" type="text" className="form-control" placeholder="Enter userName" required/>
                 </div>
 
                 <div className="form-group">
                     <label>Password</label>
-                    <input value={this.state.password} onChange={this.onChangePassword} id="password" type="password" className="form-control" placeholder="Enter password" />
+                    <input value={this.state.password} onChange={this.onChangePassword} id="password" type="password" className="form-control" placeholder="Enter password" required/>
                 </div>
 
                 
                 <div className="form-group">
                     <label>First Name</label>
-                    <input value={this.state.uFirstName} onChange={this.onChangeFirstName} id="userFirstName" type="text" className="form-control" placeholder="Enter FirstName" />
+                    <input value={this.state.uFirstName} onChange={this.onChangeFirstName} id="userFirstName" type="text" className="form-control" placeholder="Enter FirstName" required/>
                 </div> 
 
                 <div className="form-group">
                     <label>Last Name</label>
-                    <input value={this.state.uLastName} onChange={this.onChangeLastName} id="userLastName" type="text" className="form-control" placeholder="Enter LastName" />
+                    <input value={this.state.uLastName} onChange={this.onChangeLastName} id="userLastName" type="text" className="form-control" placeholder="Enter LastName" required/>
                 </div>
 
                 <div className="form-group">
                     <label>Phone</label>
-                    <input value={this.state.phone} onChange={this.onChangePhone} id="userPhone" type="text" className="form-control" placeholder="Enter Phone number" />
+                    <input value={this.state.phone} onChange={this.onChangePhone} id="userPhone" type="tel" className="form-control" placeholder="123-45-678" required/>
                 </div>
 
                 <div className="form-group">
                     <label>Address</label>
-                    <input value={this.state.userAddress} onChange={this.onChangeUserAddress} id="userAddress" type="text" className="form-control" placeholder="Enter Address" />
+                    <input value={this.state.userAddress} onChange={this.onChangeUserAddress} id="userAddress" type="text" className="form-control" placeholder="Enter Address" required/>
                 </div>
 
                 <button type="submit" className="btn btn-dark btn-lg btn-block">Create account</button>
