@@ -16,11 +16,9 @@ export default class ToggleComponent extends React.Component {
             const { isShowText } = this.state;
             return ( <
                 div > {
-                    isShowText && < div > This will be toggled < /div>} <
-                    button
-                    onClick = { this.handleClick } > { isShowText ? 'Hide' : 'Show' } <
-                    /button> <
-                    /div>
+                    isShowText && <div> This will be toggled </div>} <button onClick = { this.handleClick } > { isShowText ? 'Hide' : 'Show' } 
+                    </button> 
+                    </div>
                 );
             }
         }

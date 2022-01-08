@@ -47,7 +47,7 @@ function ProfileView(){
             <label>
             Email
             </label>
-            <input className="form-control" defaultValue={userProfile.userEmail} onChange={(e)=>{
+            <input type="email" className="form-control" defaultValue={userProfile.userEmail} onChange={(e)=>{
                 setUserEmail(e.target.value)
             }}/>
             <label>
@@ -77,7 +77,7 @@ function ProfileView(){
             <label>
             Phone
             </label>
-            <input className="form-control" defaultValue={userProfile.phone}/>
+            <input className="form-control" defaultValue={userProfile.phone} required/>
     </form>
 
 
@@ -102,6 +102,7 @@ function ProfileView(){
              
              axios.delete(`http://localhost:8080/${user}`).then((res)=>{
                 setDeleteMessage("Profile is deleted");
+                window.location='/';
             })
 
          }} > Delete your profile </button>

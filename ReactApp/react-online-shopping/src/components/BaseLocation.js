@@ -11,7 +11,7 @@ import '../App.css';
 
 function BaseLocation(){
     return <div className='App'>
-        <h1>Apna Bazaar</h1>
+        <h1>Apna Bazaar</h1> 
         <nav>
         <Navbar bg="light" expand="lg">
         <Link to='/registration' style={{textDecoration: 'none'}}><PersonIcon/> Customer</Link>
