@@ -4,6 +4,9 @@ import { PropTypes } from 'react'
 import {useHistory} from 'react-router-dom'
 
 import {withRouter} from '../History';
+import PersonIcon from '@mui/icons-material/Person';
+
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 
 import {Outlet} from 'react-router-dom';
 
@@ -101,7 +104,7 @@ class AdminLoginPage extends React.Component {
                 <h3>Log in</h3>
 
                 <div className="form-group">
-                    <label>User</label>
+                 <label><PersonIcon/> User</label>
                     <input value={this.state.userName} onChange={this.onChangeuserName} id="userName" type="text" className="form-control" placeholder="Enter userName" />
                 </div>
 

@@ -7,6 +7,8 @@ import {withRouter} from './History';
 
 import {Outlet} from 'react-router-dom';
 
+import PersonIcon from '@mui/icons-material/Person';
+
 // axios.defaults.withCredentials = true
 const backEndUrl = "http://localhost:8080"
 class LoginPage extends React.Component {
@@ -100,7 +102,7 @@ class LoginPage extends React.Component {
                 <h3>Log in</h3>
 
                 <div className="form-group">
-                    <label>User</label>
+                    <label><PersonIcon/> User</label>
                     <input value={this.state.userName} onChange={this.onChangeuserName} id="userName" type="text" className="form-control" placeholder="Enter userName" />
                 </div>
 

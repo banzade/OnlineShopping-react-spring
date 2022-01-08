@@ -30,7 +30,7 @@ class UserProductList extends Component{
                 
                 var ui = <div> 
                     <nav>
-                        <Link to='/customerproductsearch'> Product Search</Link>
+                        <Link to='/customerproductsearch' style={{textDecoration: 'none'}}> Product Search</Link>
                     </nav>
                
                 <table>
